@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="shortcut icon" href="img/logo.webp"><!--Vai criar um favicon-->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet"><!--Fonte ou letras do google-->
+	<script src="js/jquery-3.1.1.min.js"></script><!--O jquery deve vir antes de qualquer arquivo de script, caso contrario nao vai funcionar.Alem disso e possivel puxar o jquery a partir de link, sem precisar baixar, tal como se ve no script comentado logo abaixo.-->
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/estilo.css"><!--ultimo a ser carregado-->
+	<script>//Responsavel por dar o efeito scroll na pagina e alem disso pode se alterar o tempo que leva para rolar, esse 800 ai.Tudo isso seria possivel fazer em apenas uma linha com css, mas nem todos os navegadores suportam, esse de jquery todos suportam.
+	$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {//o a e de link, vai dar efeito em todos links
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){//nem se quer e 8 segundos, 8sec e 8000
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+</head>
+<body>
+<header class="cabecalho">
+	<img src="img/logo.webp" alt="Logo Social Games 7">
+	<nav class="menu">
+		<li><a href="">Início</a></li>
+		<li><a href="#quemSomos">Quem somos nós</a></li><!--Quando tu colocas um #, ele vai chamar uma parte
+		interna da pagina.-->
+		<li><a href="#conhecaNossoCanal">Conheça nosso canal</a></li>
+		<li><a href="#treinamentosH1">Treinamentos</a></li>
+		<li><a href="">Cursos online</a></li>
+		<li><a href="">Depoimentos</a></li>
+		<li><a href="">Contato</a></li>
+		<li><button class="botaoSejaAluno"><a href="" class="botaoSejaAlunoLink">Seja aluno</a></button></li>
+	</nav>
+</header>
+
+<section class="logoGrandeSection">
+	<img src="img/logoGrande.webp" alt="logo grande Social Games 7" class="logoGrandeImg">
+</section>
+<section class="quemSomos" id="quemSomos">
+	<h1>Quem somos nós</h1>
+	<h2>Know the Player inside</h2>
+	<p>Por muitas vezes, os “jogos sociais” são apenas a porta de entrada para aqueles que cruzam nosso caminho. E quando eles finalmente cruzam, é o caminho deles que muda para sempre. Somos especialistas em transformar a jornada daqueles que nos encontram, guiando cada um, individualmente, para o ápice, para a melhor versão de si mesmo.</p>
+	<p>Eu me chamo Gambit, sou master trainer da SG7, já temos mais de 100 mil inscritos/seguidores e eu pessoalmente já treinei centenas de homens por todo país, ensinando o segredo da sedução/como conquistar mulheres.
+	Sou idealizador da Social Xperience, um dos maiores eventos de desenvolvimento masculino e sedução já feitos no país.</p>
+	<p>E eu vivo acompanhado dos melhores coaches e mentores dessa área. Inclusive, <span>sou sócio do meu grande mentor, "O maior Sedutor
+	do Mundo" Mystery - muito conhecido pelo livro The Game, Mystery Method e também pelo seu programa na VH1, um reality show que ensinou homens do zero a saírem e tenrem sucesso com as mulheres.</span></p>
+	<p>Ele criou um método com conceitos psicológicos e científicos sobre como a sedução funciona de verdade, e esse ano Eu, pela SG7 trouxe o Mystery e fiz uma turnê pelo país... e juntos, nós treinamos dezenas de homens.</p>
+	<p>Homens que estavam com medo de chegar, que não sabiam o que falar, como iniciar uma conversa, e claro, sem conseguir criar o clima para o beijo e muito menos para fazer qualquer mulher sentir desejo sexual. </p>
+</section>
+<section class="conhecaNossoCanal" id="conhecaNossoCanal">
+	<h1>CONHEÇA NOSSO CANAL!</h1>
+	<iframe width="600" height="315" src="https://www.youtube.com/embed/GhUh1q_LS_w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<ul class="redesSociais">
+		<li><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a></li>
+		<li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+		<li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a></li>
+	</ul>
+	<button class="botaoSejaAluno saibaMais"><a href="https://www.youtube.com/channel" class="linkSaibaMais">SAIBA MAIS</a></button><!--Reaproveitei o codigo do botao seja aluno e dei tmbm uma outra classe para ela-->
+</section>
+
+<h1 class="treinamentosH1" id="treinamentosH1">TREINAMENTOS</h1>
+
+<section class="treinamentos">
+	<div>
+		<h1>BOOTCAMP</h1>
+		<p>O Bootcamp é o treinamento dos sonhos de todo homem que ingressa no mundo da sedução e do Pickup. É o treinamento presencial mais completo do país, com quase trinta horas de teoria + prática envolvendo todos os estilos de jogo e todos os tipos de ambiente e situação</p>
+	</div>
+	<div>
+		<h1>MENTORIAS</h1>
+		<p>O processo de “Mentoria” envolve muito mais do que Coaching, os trainers da Social Games 7 entendem que dominar as habilidades sociais vai além do que simplesmente motivar alguém. E é mais um processo de autoconhecimento para você entender quais são os importamentos mais atraentes e como adaptar eles à personalidade do aluno. Durante a mentoria, é possível trabalhar aspectos que o próprio aluno aponte ou acredite que precisa melhorar, descobrir quais são suas grandes falhas, ou até mesmo ensinar os pilares da conquista e despertar o jogador que há dentro do aluno</p>
+	</div>
+	<div class="videoBootCamp"><iframe width="450" height="315" src="https://www.youtube.com/embed/Btg5Ht-IkAM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+	<div><iframe width="450" height="315" src="https://www.youtube.com/embed/EZIDldJwLFw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+</section>
+</body>
+</html>

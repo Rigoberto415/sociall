@@ -5,11 +5,314 @@
 	<link rel="shortcut icon" href="img/logo.webp"><!--Vai criar um favicon-->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		/*Dificuldades: Como identificar o layout que vou construir, a partir do momento que o cliente me diz
+ que quer um site de medicos, o que procuro; redimensionamento das imagens, que unidades usar em imagens
+  e nas letras;Sera que no clamp so se usa vw e vh, o rem nao da jeito; Para que eu uso a funcao clamp
+  se o vw e vh ja ajustam consoante a tela, para que vou usar o clamp; Por onde voces veem a maneira como 
+  o site esta ficando, analisam de todos no chrome ou se baseiam so num, tipo Iphone X; Como vcs avaliam
+  o quanto de animacoes e complexidade tera um site, tipo o formato dele e tudo mais*/
+/*RESET DA PAGINA*/
+*{margin:0; padding: 0; font-size:100%; box-sizing: border-box; border:none; outline: none;
+font-family: 'Open Sans', sans-serif;}/*O 
+outline none tira as bordas que aparecem no formulario*/
+a{text-decoration: none;}
+nav,ul{list-style: none;}
+/*CABECALHO*/
+.cabecalho{
+	background-color: #2d2d2d;
+	padding: 15px 0;
+}
+.cabecalho img{
+	width: 80px;
+}
+.cabecalho{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.cabecalho .menu{
+	display: flex;
+	align-items: center;/*O botao estava desalinhado com o resto dos elementos da nav por eu ter me 
+	esquecido de colocar a propriedade align-items.*/
+	justify-content: center;/*Esse codigo nao precisa pois o menu ja esta centralizado horizontalmente
+	, mas coloquei em caso de ele se desajeitar em algum dispositivo*/
+}
+.cabecalho .menu li a{
+	color: #bebebe;
+	text-transform: uppercase;
+	font-size: 0.7rem;
+}
+.cabecalho .menu li{
+	margin:0px 15px;
+}
+.cabecalho .menu li:first-child{
+	margin-left: 0;
+}
+.cabecalho .menu li:last-child{
+	margin-right: 0;
+}
+.botaoSejaAluno{
+	background-color: #d71924;
+	padding: 12px 30px;
+	border-radius: 30px;
+	color: #ffffff;
+	font-weight: bold;
+	border:3px solid #8b1a20;/*Para colocar uma bordinha vermelha no botao*/
+}
+.cabecalho .menu li a:hover{
+	color:red;
+}
+.cabecalho .menu li .botaoSejaAlunoLink:hover{
+	color: #fff;
+}
+
+.cabecalho .menu .botaoSejaAluno:hover{
+	animation: anim .8s ease-in-out infinite;
+}
+@keyframes anim{
+	0%{transform: scale(1);}
+	50%{transform: scale(1.1);}
+	100%{transform: scale(1);}
+}
+@media (min-width: 20em){/*320px=20em*/
+	.cabecalho{
+		display: none;
+	}
+} 
+@media(max-width: 986px) and (min-width: 771px){
+	.cabecalho a{
+		font-size: 0.6rem;
+	}
+	.cabecalho img{
+	width:75px;
+}
+
+}
+/*Logo Grande*/
+.logoGrandeSection{
+	display: flex;
+	width: 100%;
+	background-color: #070808;
+	border-bottom: 2px solid #0f0f0f;/*E so par ter uma borda em baixo... Que por sinal nem se ve 
+	direito.Ate posso apagar*/
+	justify-content: center;
+	align-items: center;
+	padding: 100px 0px;
+}
+.logoGrandeImg{
+	width: 40vw;
+	margin-bottom: -5px;/*E uma gambiarra para criar o efeito que vi la no site da SG7, e para juntar
+	a imagem com o quem somos nos, ja que ela ja vem configurada de margem 0, precisei disso 
+	para alinhar.*/
+}
+/*QUEM SOMOS NOS*/
+.quemSomos{
+	background-color: #101010;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.quemSomos h1{
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 2.8rem;/*O REM e relativo, mas so e relativo ao pai dele.
+	Por isso ele nao aumenta e diminui quando vc da zoom. Tem que aumentar o pai dele*/
+	margin-top: 50px;
+	margin-bottom: 10px;
+}
+.quemSomos h2{
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 1.5rem;
+	margin-bottom: 10px;
+}
+.quemSomos p{
+	color: #fff;
+	max-width: 700px;
+	text-align: center;
+	font-size: 1.4rem;
+	margin-bottom: 10px;
+	margin-bottom: 50px;
+}
+.quemSomos p span{
+	color: #f21f1f;
+}
+@media(max-width: 745px) and (min-width: 0px){/*Ele vai fazer a partir de 745px para baixo*/
+	.quemSomos h1{
+		font-size: 2.2rem;
+		margin-right:20px;
+		margin-left: 20px;
+	}
+	.quemSomos h2{
+		font-size: 1.2rem;
+	}
+	.quemSomos p{
+		font-size: 1rem;
+		margin-right: 20px;
+		margin-left: 20px;
+	}
+	.quemSomos p span{
+		font-size:1.2rem;
+	}
+}
+/*CONHECA NOSSO CANAL*/
+.conhecaNossoCanal{
+	background-color: #232323;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.conhecaNossoCanal h1{
+	margin-top: 90px;/*Pode ser margin ou top...Vai resultar quase no mesmo, segundo o nosso
+	objetivo.*/
+	color: white;
+	font-size: 3.2rem;
+}
+.conhecaNossoCanal iframe{
+	margin-bottom: 60px;
+	margin-top: 60px;
+	border-radius: 45px;
+}
+.conhecaNossoCanal .redesSociais{
+	display: flex;
+}
+.conhecaNossoCanal .redesSociais li{
+	margin-right: 50px;
+}
+.conhecaNossoCanal .redesSociais li:last-child{/*Para tirar a margem que se deu a direita do 
+	facebook, embora seja imperceptivel.*/
+	margin-right: 0;
+}
+.conhecaNossoCanal .redesSociais li a i{
+	font-size: 40px;
+	color: #fff;
+}
+.conhecaNossoCanal .redesSociais li a .fa-youtube:hover{
+	color: #c4302b;
+}
+.conhecaNossoCanal .redesSociais li a .fa-instagram:hover{
+	color: #3f729b;
+}
+.conhecaNossoCanal .redesSociais li a .fa-facebook:hover{
+	color: #3b5998;
+}
+.saibaMais{
+	margin-top: 50px;
+	margin-bottom: 90px;
+}
+.saibaMais:hover{
+	animation: anim .8s ease-in-out infinite;/*O anim ja foi criado, aqui so estou chamando ele, foi 
+	criado la em cima*/
+}
+.linkSaibaMais{
+	color: #fff;
+}
+@media(max-width: 745px) and (min-width: 0px){/*se quiser um intervalo, faca algo como 
+	@media(min-width:700px) and (max-width:900px){}*/
+		.conhecaNossoCanal h1{
+			font-size: 2rem;
+		}
+		.conhecaNossoCanal iframe{
+			width: 300px;
+			height: 200px;
+		}
+	}
+	/*TREINAMENTOS*/
+	.treinamentos{
+		background-color: #050505;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		
+	}
+	.treinamentosH1{
+		text-align: center;
+		padding-top: 100px;
+		color: white;
+		font-size: 3.2rem;
+		background-color: #050505;
+		
+	}
+	.treinamentos div{/*Repare que podemos colocar flex dentro de grid, isso vai fazer um alinhamento
+		bem legal.*/
+		display: flex;
+		align-items: center;/*Pelos vistos, quando voce define o flex-direction como column, tudo se 
+		altera, o align items comeca a agir como o justify-content e o justify content como o 
+		align items. Nao defini o justify-content-center pq caso eu fizesse isso, o texto da primeira 
+		div ate estaria alinhado com o da segunda, mas por ser um texto menor, estaria um pouco mais 
+		abaixo, para resolver isso, entao tirei o justify e ficou como o padrao
+		(flex-start, desse jeito todos comecam na mesma linha).Sim, e verdade(Comprovado)*/
+		flex-direction: column;
+		margin-bottom: 100px;
+	}
+	.treinamentos div h1{
+		color: #f21f1f;
+		margin-top: 70px;
+		font-size: 2.2rem;
+		margin-bottom: 20px;
+		max-width: 450px;/*Precisei declarar max-width para o  h1 pq o p tem 450px e o alinhamento
+		ao centro dele estava diferente em relacao ao h1 que tinha mais de 450px, desse jeito os 2 se 
+		alinham ao centro tendo como referencia 450px de largura.*/
+	}
+	.treinamentos div p{
+		color: #fff;
+		font-size: 1.1rem;
+		font-weight: bold;
+		max-width: 450px;
+		text-align: center;/*Apesar de estar com justify e align center, ainda e indispensavel colocar o 
+		text-align em paragrafos.*/
+		margin-bottom: -60px;/*Gambiarra para o texto ficar mais juntinho dos iframes*/
+	}
+	.treinamentos div iframe{
+		border-radius: 45px;
+	}
+	@media(max-width:961px){/*Quando e max-width quer dizer que ele vai fazer dai para baixo e quando e 
+		quando e min-width quer dizer que ele vai fazer dai para cima, ele nao aceita so max-width e
+		 min-width.Podemos usar so width, height.*/
+		 .treinamentos{
+		 	grid-template-columns: 1fr;
+		 }
+		.treinamentosH1{
+			font-size: 1.4rem;
+			padding-top: 50px; 
+		}
+		.treinamentos div h1{
+			font-size: 1.4rem;
+			margin-top: 30px;
+		}
+		.treinamentos div p{
+			font-size:0.8rem;
+			width: 350px;
+		}
+		.treinamentos div iframe{
+			width: 300px;
+			height: 200px;
+		}
+		.treinamentos .videoBootCamp{
+			grid-row: 2;/*Isso vai colocar o video de bootcamp na segunda linha que e o que queremos.*/
+			margin-bottom: 30px;
+		}
+	}
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+
+	</style>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet"><!--Fonte ou letras do google-->
-	<script src="js/jquery-3.1.1.min.js"></script><!--O jquery deve vir antes de qualquer arquivo de script, caso contrario nao vai funcionar.Alem disso e possivel puxar o jquery a partir de link, sem precisar baixar, tal como se ve no script comentado logo abaixo.-->
+	<script src="jquery-3.1.1.min.js"></script><!--O jquery deve vir antes de qualquer arquivo de script, caso contrario nao vai funcionar.Alem disso e possivel puxar o jquery a partir de link, sem precisar baixar, tal como se ve no script comentado logo abaixo.-->
 	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/estilo.css"><!--ultimo a ser carregado-->
 	<script>//Responsavel por dar o efeito scroll na pagina e alem disso pode se alterar o tempo que leva para rolar, esse 800 ai.Tudo isso seria possivel fazer em apenas uma linha com css, mas nem todos os navegadores suportam, esse de jquery todos suportam.
 	$(document).ready(function(){
   // Add smooth scrolling to all links
@@ -39,7 +342,7 @@
 </head>
 <body>
 <header class="cabecalho">
-	<img src="img/logo.webp" alt="Logo Social Games 7">
+	<img src="logo.webp" alt="Logo Social Games 7">
 	<nav class="menu">
 		<li><a href="">Início</a></li>
 		<li><a href="#quemSomos">Quem somos nós</a></li><!--Quando tu colocas um #, ele vai chamar uma parte
@@ -54,7 +357,7 @@
 </header>
 
 <section class="logoGrandeSection">
-	<img src="img/logoGrande.webp" alt="logo grande Social Games 7" class="logoGrandeImg">
+	<img src="logoGrande.webp" alt="logo grande Social Games 7" class="logoGrandeImg">
 </section>
 <section class="quemSomos" id="quemSomos">
 	<h1>Quem somos nós</h1>

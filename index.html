@@ -5,6 +5,10 @@
 	<link rel="shortcut icon" href="img/logo.webp"><!--Vai criar um favicon-->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet"><!--Fonte ou letras do google-->
+	<script src="jquery-3.1.1.min.js"></script><!--O jquery deve vir antes de qualquer arquivo de script, caso contrario nao vai funcionar.Alem disso e possivel puxar o jquery a partir de link, sem precisar baixar, tal como se ve no script comentado logo abaixo.-->
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
 	<style>
 		/*Dificuldades: Como identificar o layout que vou construir, a partir do momento que o cliente me diz
  que quer um site de medicos, o que procuro; redimensionamento das imagens, que unidades usar em imagens
@@ -75,7 +79,11 @@ nav,ul{list-style: none;}
 	50%{transform: scale(1.1);}
 	100%{transform: scale(1);}
 }
-@media (min-width: 20em){/*320px=20em*/
+/*OBS: A media query esta um pouco desajeitada pois nao tinha muita experiencia, so comecei a manjar depois
+que os parametros do media ja estavam trocados e um pouco incoerentes, no caso teria que revisar todo media 
+query e da preguica.*/
+@media (min-width: 20em){/*320px=20em. As media queries podem estar erradas, 
+	preguica de editar.*/
 	.cabecalho{
 		display: none;
 	}
@@ -121,12 +129,14 @@ nav,ul{list-style: none;}
 	Por isso ele nao aumenta e diminui quando vc da zoom. Tem que aumentar o pai dele*/
 	margin-top: 50px;
 	margin-bottom: 10px;
+	text-align: center;
 }
 .quemSomos h2{
 	text-transform: uppercase;
 	color: #fff;
 	font-size: 1.5rem;
 	margin-bottom: 10px;
+	text-align: center;
 }
 .quemSomos p{
 	color: #fff;
@@ -170,7 +180,7 @@ nav,ul{list-style: none;}
 	objetivo.*/
 	color: white;
 	font-size: 3.2rem;
-	text-align:center;
+	text-align: center;
 }
 .conhecaNossoCanal iframe{
 	margin-bottom: 60px;
@@ -285,7 +295,7 @@ nav,ul{list-style: none;}
 		}
 		.treinamentos div p{
 			font-size:0.8rem;
-			width: 350px;
+			width: 315px;
 		}
 		.treinamentos div iframe{
 			width: 300px;
@@ -296,24 +306,108 @@ nav,ul{list-style: none;}
 			margin-bottom: 30px;
 		}
 	}
-© 2020 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
+	/*CURSOS ONLINE*/
+	.cursosOnline{
+		background-color: #232323;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	.cursosOnline .vencendoarejeicao {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.cursosOnline .metodoGambit {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.cursosOnline .cursosOnlineH1{
+		color: white;
+		font-size: 1.7rem;
+		text-align: center;
+		margin-bottom: 40px;
+		margin-top: 50px;
+	}
+	.cursosOnline div h2{
+		color: #d71924;
+		text-align: center;
+		font-size: 1.5rem; 
+	}
+	.cursosOnline div p{
+		color: white;
+		font-size: 0.8rem;
+		text-align: center;
+		margin-top: 20px;
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+	.cursosOnline button{
+		margin-top: 10px;
+	}
+	@media (min-width: 80em){/*E aconselhado a usar larguras minimas e em em*/
+		.grupoDiv{
+			display: flex;/*Precisava sempre colocar isso, se so colocar o de baixo, nao funciona*/
+			flex-direction: row;
+			align-items: center;/*So para garantir, mas nao precisa*/
+		}
+		.cursosOnline .grupoDiv p{
+			font-size: 1rem;
+			text-align: center;
+		}
+		.cursosOnline .grupoDiv .metodoGambit p{
+			max-width: 350px;
+			font-weight: bold;
+			margin-bottom: 55px;
+		}
+		.cursosOnline div p{
+			max-width: 450px;
+		}
+
+	}
+	/*DEPOIMENTOS*/
+	.depoimentos{
+		background-color: #232323;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.depoimentos h1{
+		color: white;
+		text-align: center;
+		font-size: 2rem;
+		margin-bottom: 30px;
+	}
+	.depoimentos div h2{
+		color: white;
+		text-align: center;
+		font-size: 1.5rem;
+	}
+	.depoimentos div iframe{
+		max-width: 350px;
+		border-radius: 20px;
+	}
+	@media (min-width: 80em){
+		.depoimentos .grupoDivDepoimentos{
+			display: grid;
+			grid-template-columns: repeat(3,1fr);
+			grid-gap: 50px;
+		}
+		.depoimentos div iframe{
+			width: 250px;
+			height: 150px;
+		}
+		.depoimentos h1{
+			font-size: 2.5rem;
+		}
+	}
 
 	</style>
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet"><!--Fonte ou letras do google-->
-	<script src="jquery-3.1.1.min.js"></script><!--O jquery deve vir antes de qualquer arquivo de script, caso contrario nao vai funcionar.Alem disso e possivel puxar o jquery a partir de link, sem precisar baixar, tal como se ve no script comentado logo abaixo.-->
-	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
 	<script>//Responsavel por dar o efeito scroll na pagina e alem disso pode se alterar o tempo que leva para rolar, esse 800 ai.Tudo isso seria possivel fazer em apenas uma linha com css, mas nem todos os navegadores suportam, esse de jquery todos suportam.
 	$(document).ready(function(){
   // Add smooth scrolling to all links
@@ -350,8 +444,8 @@ About
 		interna da pagina.-->
 		<li><a href="#conhecaNossoCanal">Conheça nosso canal</a></li>
 		<li><a href="#treinamentosH1">Treinamentos</a></li>
-		<li><a href="">Cursos online</a></li>
-		<li><a href="">Depoimentos</a></li>
+		<li><a href="#cursosOnline">Cursos online</a></li>
+		<li><a href="#depoimentos">Depoimentos</a></li>
 		<li><a href="">Contato</a></li>
 		<li><button class="botaoSejaAluno"><a href="" class="botaoSejaAlunoLink">Seja aluno</a></button></li>
 	</nav>
@@ -395,6 +489,50 @@ About
 	</div>
 	<div class="videoBootCamp"><iframe width="450" height="315" src="https://www.youtube.com/embed/Btg5Ht-IkAM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 	<div><iframe width="450" height="315" src="https://www.youtube.com/embed/EZIDldJwLFw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+</section>
+<section class="cursosOnline" id="cursosOnline">
+	<h1 class="cursosOnlineH1">CURSOS ONLINE</h1>
+	<div class="grupoDiv">
+	<div class="vencendoarejeicao">
+	<h2>VENCENDO A REJEIÇÃO</h2>
+	<p>Esse treinamento serve para QUALQUER PESSOA que queira perder um medo. Mas especialmente, o medo de socializar, interagir, e conhecer pessoas. Mais especialmente ainda, mulheres. Mulheres lindas. O conteúdo desse treinamento é resultado de anos de experiência e pesquisa no desenvolvimento social. Ele foi desenvolvido com base nos aprendizados dos seus mentores internacionais e 10 anos de experiências práticas ajudando homens de todas as idades a vencer seus medos e quebrar crenças limitantes.</p>
+	<button class="botaoSejaAluno saibaMais"><a href="" class="linkSaibaMais">SAIBA MAIS</a></button>
+</div>
+	<div class="metodoGambit">
+	<h2>MÉTODO GAMBIT</h2>
+	<p>É um treinamento 100% online, onde você vai aprender um sistema para se tornar um sedutor, melhorar sua auto-estima e conquistar qualquer mulher. Foi criado por SG7 Gambit, um dos maiores treinadores de sedução do mundo e ensinado para centenas de homens.</p>
+	<button class="botaoSejaAluno saibaMais"><a href="l" class="linkSaibaMais">SAIBA MAIS</a></button>
+</div>
+</div>
+</section>
+<section class="depoimentos" id="depoimentos">
+	<h1>DEPOIMENTOS</h1>
+	<div class="grupoDivDepoimentos">
+	<div>
+	<iframe width="400" height="200" src="https://www.youtube.com/embed/xYuzBGQZI2w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<h2>LUCAS</h2>
+</div>
+<div>
+	<iframe width="400" height="200" src="https://www.youtube.com/embed/vNCmsn8Fj28" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<h2>DANILO</h2>
+</div>
+<div>
+	<iframe width="400" height="200" src="https://www.youtube.com/embed/yBNJWRPYrVA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<h2>TOMÉ</h2>
+</div>
+<div>
+	<iframe width="400" height="200" src="https://www.youtube.com/embed/Tu8p3pA-xfM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<h2>JOHNNY</h2>
+</div>
+<div>
+	<iframe width="400" height="200" src="https://www.youtube.com/embed/CQQ3tRq8iMM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<h2>FRANCISCO</h2>
+</div>
+<div>
+	<iframe width="400" height="200" src="https://www.youtube.com/embed/bF4T1sJJiZM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<h2>TAYRON</h2>
+</div>
+</div>
 </section>
 </body>
 </html>

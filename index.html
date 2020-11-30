@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Home</title>
-	<link rel="shortcut icon" href="img/logo.webp"><!--Vai criar um favicon-->
+	<link rel="shortcut icon" href="logo.webp"><!--Vai criar um favicon-->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet"><!--Fonte ou letras do google-->
@@ -406,7 +406,113 @@ query e da preguica.*/
 			font-size: 2.5rem;
 		}
 	}
-
+	/*CONTATOS*/
+	.contatos{
+		background-color: #141414;/*c1c1c1*/
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	.contatos h1{
+		text-align: center;
+		color: white;
+		margin-top: 100px;
+		font-size: 1.8rem;
+	}
+	.contatos .telefone{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	.contatos .telefone p{
+		color: white;
+	}
+	.contatos .telefone h2{
+		color: white;
+		font-weight: bold;
+	}
+	.contatos .telefone button{
+		color: black;
+		background-color: #ffffff;
+		border:none;
+	}
+	.contatos form{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	.contatos form input, textarea{
+		margin-bottom: 10px;
+		border:1.5px solid #c1c1c1;
+		background-color: black;
+		color: white;
+	}
+	
+	.contatos form textarea{
+		padding: 10px;
+	}
+	.contatos form input{
+		padding: 10px;
+		width: 295px;
+	}
+	.contatos form p{
+		color: white;
+		font-size: 1.4rem;
+		text-align: center;
+		padding-bottom: 90px;
+	}
+	.contatos form .botaoSubmit{
+		background-color: #ffffff;
+		font-weight: bold;
+		color:black;
+	}
+	@media(min-width: 80em){
+		.contatos .grupoDivContatos{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+		.contatos .grupoDivContatos .telefone{
+			margin-right: 200px;
+		}
+		.contatos h1{
+			margin-bottom: 50px;
+			font-size: 3.5rem;
+		}
+		.contatos form input, textarea{
+			width: 500px;
+		}
+		.contatos .telefone h2{
+			font-size: 1.2rem;
+			margin-bottom: 15px;
+		}
+		.contatos .telefone p{
+			font-size: 1.1rem;
+		}
+	}
+	/*RODAPE*/
+	footer{
+		background-color: #d71924;
+		display: flex;
+		justify-content: center;align-items: center;
+		padding: 13px 0px;
+	}
+	footer p{
+		color: #ffffff;
+		font-size: 0.7rem;
+	}
+	@media(min-width: 80em){
+		footer{
+			padding: 25px 0px;
+		}
+		footer p{
+			font-size: 1rem;
+		}
+	}
 	</style>
 	<script>//Responsavel por dar o efeito scroll na pagina e alem disso pode se alterar o tempo que leva para rolar, esse 800 ai.Tudo isso seria possivel fazer em apenas uma linha com css, mas nem todos os navegadores suportam, esse de jquery todos suportam.
 	$(document).ready(function(){
@@ -446,7 +552,7 @@ query e da preguica.*/
 		<li><a href="#treinamentosH1">Treinamentos</a></li>
 		<li><a href="#cursosOnline">Cursos online</a></li>
 		<li><a href="#depoimentos">Depoimentos</a></li>
-		<li><a href="">Contato</a></li>
+		<li><a href="#contatos">Contato</a></li>
 		<li><button class="botaoSejaAluno"><a href="" class="botaoSejaAlunoLink">Seja aluno</a></button></li>
 	</nav>
 </header>
@@ -496,12 +602,12 @@ query e da preguica.*/
 	<div class="vencendoarejeicao">
 	<h2>VENCENDO A REJEIÇÃO</h2>
 	<p>Esse treinamento serve para QUALQUER PESSOA que queira perder um medo. Mas especialmente, o medo de socializar, interagir, e conhecer pessoas. Mais especialmente ainda, mulheres. Mulheres lindas. O conteúdo desse treinamento é resultado de anos de experiência e pesquisa no desenvolvimento social. Ele foi desenvolvido com base nos aprendizados dos seus mentores internacionais e 10 anos de experiências práticas ajudando homens de todas as idades a vencer seus medos e quebrar crenças limitantes.</p>
-	<button class="botaoSejaAluno saibaMais"><a href="" class="linkSaibaMais">SAIBA MAIS</a></button>
+	<button class="botaoSejaAluno saibaMais"><a href="vencendoarejeicao.html" class="linkSaibaMais">SAIBA MAIS</a></button>
 </div>
 	<div class="metodoGambit">
 	<h2>MÉTODO GAMBIT</h2>
 	<p>É um treinamento 100% online, onde você vai aprender um sistema para se tornar um sedutor, melhorar sua auto-estima e conquistar qualquer mulher. Foi criado por SG7 Gambit, um dos maiores treinadores de sedução do mundo e ensinado para centenas de homens.</p>
-	<button class="botaoSejaAluno saibaMais"><a href="l" class="linkSaibaMais">SAIBA MAIS</a></button>
+	<button class="botaoSejaAluno saibaMais"><a href="metodoGambit.html" class="linkSaibaMais">SAIBA MAIS</a></button>
 </div>
 </div>
 </section>
@@ -534,5 +640,26 @@ query e da preguica.*/
 </div>
 </div>
 </section>
+<section class="contatos" id="contatos">
+	<h1>CONTATO</h1>
+	<div class="grupoDivContatos">
+	<div class="telefone">
+		<h2>SÃO PAULO | SP | BRASIL</h2>
+		<p>TELEFONE: +55(11)97500-3761</p>
+		<p>CONTATO@SOCIALGAMES7.COM</p>
+		<button class="botaoSejaAluno saibaMais"><a href="www.whatsapp.com" class="linkSaibaMais"></a>WHATSAPP</button>
+	</div>
+		<form>
+			<input type="text" name="" placeholder="name">
+			<input type="email" name="" placeholder="email">
+			<textarea placeholder="message" rows="5" cols="33"></textarea>
+			<input type="submit" name="" class="botaoSubmit" value="Enviar">
+			<p>Obrigado pelo envio!</p>
+		</form>
+	</div>
+</section>
+<footer>
+	<p>© 2017 SOCIAL GAMES 7. KNOW THE PLAYER INSIDE.</p>
+</footer>
 </body>
 </html>
